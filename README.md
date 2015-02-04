@@ -9,6 +9,7 @@ This is the [React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
 Build the tags and run a server:
 ~~~
 $ cd commentsTuto
-$ riot . public/tutorial.js
+$ riot tags/ public/tutorial.js
 $ go run server.go
 ~~~
+Now the app should be available at http://127.0.0.1:8080/
