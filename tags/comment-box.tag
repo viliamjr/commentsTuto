@@ -12,8 +12,7 @@
 			url: opts.url,
 			dataType: 'json',
 			success: function(data) {
-				this.data = data;
-				this.update();
+				this.update({ data: data });
 			}.bind(this),
 			error: function(xhr, status, err) {
 				console.error(opts.url, status, err.toString());
@@ -26,8 +25,7 @@
 		var comments = this.data;
 		var newComments = comments.concat([comment]);
 
-		this.data = newComments;
-		this.update();
+		this.update({ data: newComments });
 
 		$.ajax({
 			url: opts.url,
@@ -35,8 +33,7 @@
 			type: 'POST',
 			data: comment,
 			success: function(data) {
-				this.data = data;
-				this.update();
+				this.update({ data: data });
 			}.bind(this),
 			error: function(xhr, status, err) {
 				console.error(opts.url, status, err.toString());
